@@ -17,7 +17,7 @@
     position: absolute;
     height: 4.5rem;
     width: 10rem;
-    /* background-color: red; */
+    background-color: red;
     z-index: 0;
 }
 
@@ -26,35 +26,85 @@
     width: 10rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    position: absolute;
+    margin: 45px auto 0;
+    /* position: absolute;
     left: 50%;
-    transform: translateX(-50%) translateY(45px);
-    z-index: 1;
+    transform: translateX(-50%) translateY(45px); */
 }
 
 .eye-movement-container *:not(.test) {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     z-index: 1;
 }
 
-.up-left:hover ~ #head:has(.eyes) {
-    background-color: blue;
+.up-left:hover ~ #head .eyes {
+    transform: translateX(-25px) translateY(-25px);
 }
+
+.up-mid:hover ~ #head #left {
+    transform: translateX(45px) translateY(-65px);
+}
+
+.up-mid:hover ~ #head #right {
+    transform: translateX(-45px) translateY(-65px);
+}
+
+.up-right:hover ~ #head .eyes {
+    transform: translateX(25px) translateY(-25px);
+}
+
+.mid-left:hover ~ #head #left {
+    transform: translateX(-15px);
+}
+
+.mid-left:hover ~ #head #right {
+    transform: translateX(-55px);
+}
+
+.mid-middle:hover ~ #head #left {
+    transform: translateX(65px) translateY(-15px);
+}
+
+.mid-middle:hover ~ #head #right {
+    transform: translateX(-65px) translateY(-15px);
+}
+
+.mid-right:hover ~ #head #left {
+    transform: translateX(55px);
+}
+
+.mid-right:hover ~ #head #right {
+    transform: translateX(15px);
+}
+
+.lo-left:hover ~ #head .eyes {
+    transform: translateX(-25px) translateY(25px);
+}
+
+.lo-middle:hover ~ #head #left {
+    transform: translateX(45px) translateY(25px);
+}
+
+.lo-middle:hover ~ #head #right {
+    transform: translateX(-45px) translateY(25px);
+}
+
+.lo-right:hover ~ #head .eyes {
+    transform: translateX(25px) translateY(25px);
+}
+
 
 #head {
     height: 4.5rem;
     width: 10rem;
     background-color: var(--color);
-    margin: 45px auto 0;
+    margin: 0 auto 0;
     border-radius: 10rem 10rem 0 0;
+    position: absolute;
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
-   
-}
-
-#head:hover .eyes {
-    transform: translateX(-20px) translateY(20px);
+    z-index: 0;
 }
 
 .eyes {
@@ -134,5 +184,3 @@
 #right-leg:hover {
     transform: rotate(-20deg);
 }
-
-
